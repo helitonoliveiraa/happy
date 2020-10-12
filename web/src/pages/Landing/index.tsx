@@ -4,11 +4,11 @@ import { FiArrowRight } from 'react-icons/fi';
 
 import logo from '../../assets/logo.svg';
 
-import './styles.css';
+import { Container, Wrapper, Location } from './styles';
 
 const Landing: React.FC = () => (
-  <div id="page-langing">
-    <div className="content-wrapper">
+  <Container>
+    <Wrapper>
       <img src={logo} alt="Happy" />
 
       <main>
@@ -16,16 +16,16 @@ const Landing: React.FC = () => (
         <p>Visite orfanatos e mude o dia de muitas crianças.</p>
       </main>
 
-      <div className="location">
+      <Location>
         <strong>Rio de Janeiro</strong>
         <span>Queimados</span>
-      </div>
+      </Location>
 
-      <Link to="/app" className="enter-app">
+      <Link to="/app">
         <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
       </Link>
-    </div>
-  </div>
+    </Wrapper>
+  </Container>
 );
 
 export default Landing;
