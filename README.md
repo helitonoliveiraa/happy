@@ -25,3 +25,11 @@ Happy é uma aplicação que estou desenvolvendo no evento `NLW(Next Level week)
 O nome `happy` não foi escolhido por acaso, pois outubro é o mês das crianças, então em homenagem a isso essa aplicação tem uma pegada social com foco nos pequeninos.
 
 Ficou curioso...? quer aprender programação ou se já programa quer ir além de onde você já está, ainda da tempo, você pode se escrever no treinamento acessando o link: [Clique em mim!](https://nextlevelweek.com/inscricao/3)
+
+## :page_facing_up: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/heliton1988/gobarber/blob/master/LICENSE) para mais detalhes.
+
+<br /><br />
+
+<p align="center">Feito com 💛 by <a href="https://www.linkedin.com/in/helitonoliveira/" target="_blank">Héliton Oliveira</a></p>
