@@ -1,27 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FiPlus } from 'react-icons/fi';
 import { Map, TileLayer } from 'react-leaflet';
 
 import mapMarkerImg from '../../assets/map-marker.svg';
 
-import './styles.css';
+import { Container, Aside, Header, Footer, LinkButton } from './styles';
 
 const OrphanagesMap: React.FC = () => (
-  <div id="page-map">
-    <aside>
-      <header>
+  <Container>
+    <Aside>
+      <Header>
         <img src={mapMarkerImg} alt="Happy" />
 
         <h2>Escolha um orfanato no mapa</h2>
         <p>Muitas crianças estão esperando a sua visita :)</p>
-      </header>
+      </Header>
 
-      <footer>
+      <Footer>
         <strong>Rio de Janeiro</strong>
         <span>Santa Catarina</span>
-      </footer>
-    </aside>
+      </Footer>
+    </Aside>
 
     <Map
       center={[-22.701093, -43.531849]}
@@ -34,10 +33,10 @@ const OrphanagesMap: React.FC = () => (
       />
     </Map>
 
-    <Link to="/" className="create-orphanage">
+    <LinkButton to="/">
       <FiPlus size={32} color="#fff" />
-    </Link>
-  </div>
+    </LinkButton>
+  </Container>
 );
 
 export default OrphanagesMap;
