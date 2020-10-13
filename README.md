@@ -32,7 +32,7 @@
 <br /><br />
 
 <p  align="center">
-  <a href="https://5f8603b9d2f6697c7d1f20ea--gallant-rosalind-80381f.netlify.app/">
+  <a href="https://gallant-rosalind-80381f.netlify.app/">
     <img src="./.github/button.png" atl="Happy-netlify">
   </a>
 </p>
