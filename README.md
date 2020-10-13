@@ -29,6 +29,16 @@
   <img src="./.github/banner2.png" alt="Happy-map">
 </p>
 
+<br /><br />
+
+<p  align="center">
+  <a href="https://dazzling-shaw-20a9f1.netlify.app/">
+    <img src="./.github/button.png" atl="Happy-netlify">
+  </a>
+</p>
+
+<br /><br />
+
 ## :memo: Sobre
 
 Happy é uma aplicação que estou desenvolvendo no evento `NLW(Next Level week)` oferecido pela [Rocketseat](https://rocketseat.com.br/). Ao final do treinamente terei desenvolvido uma aplicação completa que envolve front-end web, mobile & back-end.<br />
