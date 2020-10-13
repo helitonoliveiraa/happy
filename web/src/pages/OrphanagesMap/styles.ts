@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { lighten } from 'polished';
 
 export const Container = styled.div`
   width: 100vw;
@@ -15,7 +16,11 @@ export const Container = styled.div`
 
 export const Aside = styled.aside`
   width: 440px;
-  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+  background: linear-gradient(
+    329.54deg,
+    ${props => props.theme.colors.primary} 0%,
+    ${props => props.theme.colors.grandientEffect} 100%
+  );
   padding: 80px;
 
   display: flex;
@@ -56,7 +61,9 @@ export const LinkButton = styled(Link)`
   width: 64px;
   height: 64px;
   border-radius: 20px;
-  background: #15c3d6;
+  background: ${({ theme }) => theme.colors.primary};
+
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
 
   display: flex;
   align-items: center;
@@ -66,6 +73,6 @@ export const LinkButton = styled(Link)`
   transition: background 0.2s;
 
   &:hover {
-    background: #17d6eb;
+    background: ${({ theme }) => lighten(0.09, theme.colors.primary)};
   }
 `;

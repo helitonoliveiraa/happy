@@ -1,9 +1,9 @@
 export default {
-  title: 'light',
+  title: 'dark',
 
   colors: {
-    primary: '#15C3D6',
-    grandientEffect: '#00c7c7',
+    primary: 'rgb(34, 34, 34)',
+    grandientEffect: 'rgba(52, 50, 51, 0.99)',
     secondary: '#FFD666',
     green: '#37C77F',
     pink: '#FF669D',

@@ -34,7 +34,10 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-use-before-define": "off",
+    "arrow-parens": "off",
+    "object-curly-newline":"off",
     "import/extensions": [
       "error",
       "ignorePackages",

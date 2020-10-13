@@ -1,20 +1,32 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import landingImg from '../../assets/landing.svg';
 
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+  background: linear-gradient(
+    329.54deg,
+    ${props => props.theme.colors.primary} 0%,
+    ${props => props.theme.colors.grandientEffect} 100%
+  );
 
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
+export const SwitchButton = styled.div`
+  position: absolute;
+  right: 0;
+  top: 80px;
+`;
+
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 1100px;
+  padding-top: 10px;
 
   height: 100%;
   max-height: 680px;
@@ -49,8 +61,10 @@ export const Wrapper = styled.div`
 
     width: 80px;
     height: 80px;
-    background: #ffd666;
+    background: ${({ theme }) => theme.colors.secondary};
     border-radius: 30px;
+
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
 
     display: flex;
     align-items: center;
@@ -59,7 +73,7 @@ export const Wrapper = styled.div`
     transition: background 0.2s;
 
     &:hover {
-      background: #96feff;
+      background: ${({ theme }) => lighten(0.33, theme.colors.primary)};
     }
   }
 `;
