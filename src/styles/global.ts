@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
+// import 'leaflet/dist/leaflet-src';
+
 export default createGlobalStyle`
+
   * {
     margin: 0;
     padding: 0;

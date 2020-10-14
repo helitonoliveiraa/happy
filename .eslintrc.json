@@ -37,8 +37,10 @@
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
+    "implicit-arrow-linebreak": "off",
     "no-use-before-define": "off",
     "arrow-parens": "off",
+    "camelcase": "off",
     "object-curly-newline":"off",
     "import/extensions": [
       "error",
