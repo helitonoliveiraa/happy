@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten, darken } from 'polished';
+import { darken } from 'polished';
 import landingImg from '../../assets/landing.svg';
 
 export const Container = styled.div`
