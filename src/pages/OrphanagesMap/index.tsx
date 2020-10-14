@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from 'styled-components';
-import { FiPlus, FiArrowRight } from 'react-icons/fi';
+import { FiPlus, FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import api from '../../services/api';
@@ -19,6 +19,7 @@ interface Orphanage {
 
 const OrphanagesMap: React.FC = () => {
   const { title } = useContext(ThemeContext);
+
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
   useEffect(() => {
@@ -42,8 +43,14 @@ const OrphanagesMap: React.FC = () => {
         </Header>
 
         <Footer>
-          <strong>Rio de Janeiro</strong>
-          <span>Santa Catarina</span>
+          <div>
+            <strong>Rio de Janeiro</strong>
+            <span>Queimados</span>
+          </div>
+
+          <Link to="/">
+            <FiArrowLeft size={20} color="#fff" />
+          </Link>
         </Footer>
       </Aside>
 

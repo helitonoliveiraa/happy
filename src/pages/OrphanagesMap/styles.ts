@@ -76,12 +76,20 @@ export const Header = styled.header`
 
 export const Footer = styled.footer`
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
-  line-height: 24px;
+  div {
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
 
-  strong {
-    font-weight: 800;
+    strong {
+      font-weight: 800;
+    }
+  }
+
+  a {
+    margin-left: 4.5rem;
   }
 `;
 
