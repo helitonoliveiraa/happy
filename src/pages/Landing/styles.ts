@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten } from 'polished';
+import { lighten, darken } from 'polished';
 import landingImg from '../../assets/landing.svg';
 
 export const Container = styled.div`
@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   background: linear-gradient(
     329.54deg,
-    ${props => props.theme.colors.primary} 0%,
+    ${props => props.theme.colors.primary} 60%,
     ${props => props.theme.colors.grandientEffect} 100%
   );
 
@@ -61,10 +61,14 @@ export const Wrapper = styled.div`
 
     width: 80px;
     height: 80px;
-    background: ${({ theme }) => theme.colors.secondary};
+    background-image: linear-gradient(
+      to right,
+      ${props => props.theme.colors.buttonBackground1} 0%,
+      ${props => props.theme.colors.buttonBackground2} 80%
+    );
     border-radius: 30px;
 
-    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.2);
 
     display: flex;
     align-items: center;
@@ -73,7 +77,11 @@ export const Wrapper = styled.div`
     transition: background 0.2s;
 
     &:hover {
-      background: ${({ theme }) => lighten(0.33, theme.colors.primary)};
+      background-image: linear-gradient(
+        to right,
+        ${({ theme }) => darken(0.1, theme.colors.buttonBackground1)} 0%,
+        ${({ theme }) => darken(0.1, theme.colors.buttonBackground2)} 80%
+      );
     }
   }
 `;

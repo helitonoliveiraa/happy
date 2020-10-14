@@ -9,6 +9,7 @@ declare module 'styled-components' {
       grandientEffect: string;
       secondary: string;
       green: string;
+      yellow: string;
       pink: string;
       greenLow: string;
       blueLow: string;
@@ -19,6 +20,9 @@ declare module 'styled-components' {
       textTitle2: string;
       textBase: string;
       textComplement: string;
+
+      buttonBackground1: string;
+      buttonBackground2: string;
     };
   }
 }

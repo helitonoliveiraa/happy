@@ -2,10 +2,11 @@ export default {
   title: 'dark',
 
   colors: {
-    primary: 'rgb(34, 34, 34)',
-    grandientEffect: 'rgba(52, 50, 51, 0.99)',
-    secondary: '#FFD666',
+    primary: 'rgb(32, 32, 36)',
+    grandientEffect: 'rgb(32, 32, 36)',
+    secondary: '#ff5a79',
     green: '#37C77F',
+    yellow: '#FFD666',
     pink: '#FF669D',
     greenLow: '#EDFFF6',
     blueLow: '#D1EDF2',
@@ -16,5 +17,8 @@ export default {
     textTitle2: '#4D6F80',
     textBase: '#5C8599',
     textComplement: '#8FA7B2',
+
+    buttonBackground1: '#FFD666',
+    buttonBackground2: '#ff5a79',
   },
 };
