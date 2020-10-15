@@ -77,6 +77,7 @@ export const Header = styled.header`
 export const Footer = styled.footer`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   div {
     display: flex;
@@ -89,7 +90,9 @@ export const Footer = styled.footer`
   }
 
   a {
-    margin-left: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
