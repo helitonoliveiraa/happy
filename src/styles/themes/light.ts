@@ -20,5 +20,11 @@ export default {
 
     buttonBackground1: '#FF9944',
     buttonBackground2: '#FC6076',
+
+    popupText: '#0089a5',
+    popupBackground: 'rgba(255, 255, 255, 0.8)',
+
+    backgroundOrphanages: '#CEDEE5',
+    backgroundForm: '#ffffff',
   },
 };

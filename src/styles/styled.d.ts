@@ -23,6 +23,12 @@ declare module 'styled-components' {
 
       buttonBackground1: string;
       buttonBackground2: string;
+
+      popupText: string;
+      popupBackground: string;
+
+      backgroundOrphanages: string;
+      backgroundForm: string;
     };
   }
 }
