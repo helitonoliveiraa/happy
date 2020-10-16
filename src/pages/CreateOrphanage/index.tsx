@@ -8,7 +8,16 @@ import Sidebar from '../../components/Sidebar';
 import happyMapIcon from '../../utils/happyMapIcon';
 import api from '../../services/api';
 
-import './styles.css';
+// import './styles.css';
+import {
+  Container,
+  Form,
+  InputBlock,
+  ImageContainer,
+  Label,
+  SelectButtonContainer,
+  ButtonConfirm,
+} from './styles';
 
 const CreateOrphanage: React.FC = () => {
   const history = useHistory();
@@ -40,7 +49,8 @@ const CreateOrphanage: React.FC = () => {
     setImages(selectedImage);
 
     const selectedImagePreview = selectedImage.map(image =>
-      URL.createObjectURL(image));
+      URL.createObjectURL(image),
+    );
 
     setPrevewImages(selectedImagePreview);
   }
@@ -72,11 +82,11 @@ const CreateOrphanage: React.FC = () => {
   }
 
   return (
-    <div id="page-create-orphanage">
+    <Container id="page-create-orphanage">
       <Sidebar />
 
       <main>
-        <form onSubmit={handleSubmit} className="create-orphanage-form">
+        <Form onSubmit={handleSubmit} className="create-orphanage-form">
           <fieldset>
             <legend>Dados</legend>
 
@@ -99,16 +109,16 @@ const CreateOrphanage: React.FC = () => {
               )}
             </Map>
 
-            <div className="input-block">
+            <InputBlock className="input-block">
               <label htmlFor="name">Nome</label>
               <input
                 id="name"
                 value={name}
                 onChange={e => setName(e.target.value)}
               />
-            </div>
+            </InputBlock>
 
-            <div className="input-block">
+            <InputBlock className="input-block">
               <label htmlFor="about">
                 Sobre <span>Máximo de 300 caracteres</span>
               </label>
@@ -118,54 +128,54 @@ const CreateOrphanage: React.FC = () => {
                 value={about}
                 onChange={e => setAbout(e.target.value)}
               />
-            </div>
+            </InputBlock>
 
-            <div className="input-block">
+            <InputBlock className="input-block">
               <label htmlFor="images">Fotos</label>
 
-              <div className="images-container">
+              <ImageContainer className="images-container">
                 {prevewImages.map(image => (
                   <img key={image} src={image} alt={name} />
                 ))}
 
-                <label htmlFor="image[]" className="new-image">
+                <Label htmlFor="image[]" className="new-image">
                   <FiPlus size={24} color="#15b6d6" />
-                </label>
-              </div>
+                </Label>
+              </ImageContainer>
               <input
                 multiple
                 onChange={handleSelectImage}
                 type="file"
                 id="image[]"
               />
-            </div>
+            </InputBlock>
           </fieldset>
 
           <fieldset>
             <legend>Visitação</legend>
 
-            <div className="input-block">
+            <InputBlock className="input-block">
               <label htmlFor="instructions">Instruções</label>
               <textarea
                 id="instructions"
                 value={instructions}
                 onChange={e => setInstructions(e.target.value)}
               />
-            </div>
+            </InputBlock>
 
-            <div className="input-block">
+            <InputBlock className="input-block">
               <label htmlFor="opening_hours">Horário de funcionamento</label>
               <input
                 id="opening_hours"
                 value={opening_hours}
                 onChange={e => setOpeningHours(e.target.value)}
               />
-            </div>
+            </InputBlock>
 
-            <div className="input-block">
+            <InputBlock className="input-block">
               <label htmlFor="open_on_weekends">Atende fim de semana</label>
 
-              <div className="button-select">
+              <SelectButtonContainer className="button-select">
                 <button
                   type="button"
                   className={open_on_weekends ? 'active' : ''}
@@ -181,16 +191,16 @@ const CreateOrphanage: React.FC = () => {
                 >
                   Não
                 </button>
-              </div>
-            </div>
+              </SelectButtonContainer>
+            </InputBlock>
           </fieldset>
 
-          <button className="confirm-button" type="submit">
+          <ButtonConfirm className="confirm-button" type="submit">
             Confirmar
-          </button>
-        </form>
+          </ButtonConfirm>
+        </Form>
       </main>
-    </div>
+    </Container>
   );
 };
 
