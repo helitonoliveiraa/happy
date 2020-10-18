@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 export const Container = styled.aside`
   position: fixed;
   height: 100%;
   padding: 32px 24px;
-  background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
+  background: linear-gradient(
+    329.54deg,
+    ${props => props.theme.colors.grandientEffect} 0%,
+    ${props => props.theme.colors.primary} 100%
+  );
 
   display: flex;
   flex-direction: column;
@@ -24,7 +29,7 @@ export const Footer = styled.footer`
 
     border: 0;
 
-    background: #12afcb;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 16px;
 
     cursor: pointer;
@@ -36,7 +41,7 @@ export const Footer = styled.footer`
     align-items: center;
 
     &:hover {
-      background: #17d6eb;
+      background: ${({ theme }) => lighten(0.09, theme.colors.primary)};
     }
   }
 `;

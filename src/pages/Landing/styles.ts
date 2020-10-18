@@ -7,8 +7,8 @@ export const Container = styled.div`
   height: 100vh;
   background: linear-gradient(
     329.54deg,
-    ${props => props.theme.colors.primary} 60%,
-    ${props => props.theme.colors.grandientEffect} 100%
+    ${props => props.theme.colors.grandientEffect} 0%,
+    ${props => props.theme.colors.primary} 100%
   );
 
   display: flex;

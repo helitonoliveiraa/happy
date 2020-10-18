@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { ThemeContext } from 'styled-components';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiClock, FiInfo } from 'react-icons/fi';
 import { Map, Marker, TileLayer } from 'react-leaflet';
@@ -8,7 +9,19 @@ import Sidebar from '../../components/Sidebar';
 import happyMapIcon from '../../utils/happyMapIcon';
 import api from '../../services/api';
 
-import './styles.css';
+import {
+  Container,
+  MainContainer,
+  OrphanageDetails,
+  ImageContainer,
+  ContantContainer,
+  MapContainer,
+  OpenDetails,
+  OpenWeekends,
+  CloseWeekends,
+  Button,
+  Hour,
+} from './styles';
 
 interface OrphanageProps {
   id: number;
@@ -30,6 +43,8 @@ interface OrphanageParams {
 }
 
 const Orphanage: React.FC = () => {
+  const { title } = useContext(ThemeContext);
+
   const { id } = useParams<OrphanageParams>();
   const [orphanage, setOrphanage] = useState<OrphanageProps>();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -53,17 +68,17 @@ const Orphanage: React.FC = () => {
   }
 
   return (
-    <div id="page-orphanage">
+    <Container id="page-orphanage">
       <Sidebar />
 
-      <main>
-        <div className="orphanage-details">
+      <MainContainer>
+        <OrphanageDetails className="orphanage-details">
           <img
             src={orphanage.images[activeImageIndex].url}
             alt="Lar das meninas"
           />
 
-          <div className="images">
+          <ImageContainer className="images">
             {orphanage.images.map((image, index: number) => (
               <button
                 key={image.id}
@@ -74,13 +89,13 @@ const Orphanage: React.FC = () => {
                 <img src={image.url} alt={orphanage.name} />
               </button>
             ))}
-          </div>
+          </ImageContainer>
 
-          <div className="orphanage-details-content">
+          <ContantContainer className="orphanage-details-content">
             <h1>{orphanage.name}</h1>
             <p>{orphanage.about}</p>
 
-            <div className="map-container">
+            <MapContainer className="map-container">
               <Map
                 center={[orphanage.latitude, orphanage.longitude]}
                 zoom={16}
@@ -92,7 +107,7 @@ const Orphanage: React.FC = () => {
                 doubleClickZoom={false}
               >
                 <TileLayer
-                  url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+                  url={`https://api.mapbox.com/styles/v1/mapbox/${title}-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
                 />
                 <Marker
                   interactive={false}
@@ -110,43 +125,43 @@ const Orphanage: React.FC = () => {
                   Ver rotas no Google Maps
                 </a>
               </footer>
-            </div>
+            </MapContainer>
 
             <hr />
 
             <h2>Instruções para visita</h2>
             <p>{orphanage.instructions}</p>
 
-            <div className="open-details">
-              <div className="hour">
+            <OpenDetails className="open-details">
+              <Hour className="hour">
                 <FiClock size={32} color="#15B6D6" />
                 Segunda à Sexta <br />
                 {orphanage.opening_hours}
-              </div>
+              </Hour>
 
               {orphanage.open_on_weekends ? (
-                <div className="open-on-weekends">
+                <OpenWeekends className="open-on-weekends">
                   <FiInfo size={32} color="#39CC83" />
                   Atendemos <br />
                   fim de semana
-                </div>
+                </OpenWeekends>
               ) : (
-                <div className="close-on-weekends">
+                <CloseWeekends className="close-on-weekends">
                   <FiInfo size={32} color="#FF669D" />
                   Não Atendemos <br />
                   fim de semana
-                </div>
+                </CloseWeekends>
               )}
-            </div>
+            </OpenDetails>
 
-            <button type="button" className="contact-button">
+            <Button type="button" className="contact-button">
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button>
-          </div>
-        </div>
-      </main>
-    </div>
+            </Button>
+          </ContantContainer>
+        </OrphanageDetails>
+      </MainContainer>
+    </Container>
   );
 };
 
