@@ -1,4 +1,5 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react';
+import React, { useState, FormEvent, ChangeEvent, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
@@ -8,7 +9,6 @@ import Sidebar from '../../components/Sidebar';
 import happyMapIcon from '../../utils/happyMapIcon';
 import api from '../../services/api';
 
-// import './styles.css';
 import {
   Container,
   Form,
@@ -21,6 +21,7 @@ import {
 
 const CreateOrphanage: React.FC = () => {
   const history = useHistory();
+  const { title } = useContext(ThemeContext);
 
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
@@ -49,8 +50,7 @@ const CreateOrphanage: React.FC = () => {
     setImages(selectedImage);
 
     const selectedImagePreview = selectedImage.map(image =>
-      URL.createObjectURL(image),
-    );
+      URL.createObjectURL(image),);
 
     setPrevewImages(selectedImagePreview);
   }
@@ -97,7 +97,7 @@ const CreateOrphanage: React.FC = () => {
               onclick={handleMapClik}
             >
               <TileLayer
-                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+                url={`https://api.mapbox.com/styles/v1/mapbox/${title}-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
               />
 
               {position.latitude !== 0 && (

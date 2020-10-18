@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 export const Container = styled.div`
   display: flex;
@@ -13,8 +14,8 @@ export const Form = styled.form`
   width: 700px;
   margin: 64px auto;
 
-  background: #ffffff;
-  border: 1px solid #d3e2e5;
+  background: ${({ theme }) => theme.colors.backgroundForm};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 20px;
 
   padding: 64px 80px;
@@ -23,7 +24,7 @@ export const Form = styled.form`
 
   .leaflet-container {
     margin-bottom: 40px;
-    border: 1px solid #d3e2e5;
+    border: 1px solid ${({ theme }) => theme.colors.border};
     border-radius: 20px;
   }
 
@@ -38,7 +39,7 @@ export const Form = styled.form`
       color: #5c8599;
       font-weight: 700;
 
-      border-bottom: 1px solid #d3e2e5;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.border};
       margin-bottom: 40px;
       padding-bottom: 24px;
     }
@@ -71,11 +72,11 @@ export const InputBlock = styled.div`
   input,
   textarea {
     width: 100%;
-    background: #f5f8fa;
-    border: 1px solid #d3e2e5;
+    background: ${({ theme }) => lighten(0.2, theme.colors.backgroundGlobal)};
+    border: 1px solid ${({ theme }) => theme.colors.border};
     border-radius: 20px;
     outline: none;
-    color: #5c8599;
+    color: ${({ theme }) => theme.colors.textBase};
   }
 
   input {
@@ -112,7 +113,7 @@ export const ImageContainer = styled.div`
 export const Label = styled.label`
   width: 100%;
   height: 96px;
-  background: #f5f8fa;
+  background: ${({ theme }) => theme.colors.backgroundLabel};
   border: 1px dashed #96d2f0;
   border-radius: 20px;
   cursor: pointer;
@@ -128,13 +129,13 @@ export const SelectButtonContainer = styled.div`
 
   button {
     height: 64px;
-    background: #f5f8fa;
+    background: ${({ theme }) => theme.colors.buttonBackground3};
     border: 1px solid #d3e2e5;
     color: #5c8599;
     cursor: pointer;
 
     &.active {
-      background: #edfff6;
+      background: ${({ theme }) => theme.colors.buttonBackground4};
       border: 1px solid #a1e9c5;
       color: #37c77f;
     }

@@ -12,6 +12,8 @@ import Orphanage from './pages/Orphanage';
 import light from './styles/themes/light';
 import dark from './styles/themes/dark';
 
+import GlobalStyle from './styles/global';
+
 const Routes: React.FC = () => {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
 
@@ -32,6 +34,7 @@ const Routes: React.FC = () => {
 
           <Route path="/orphanages/create" component={CreateOrphanage} />
           <Route path="/orphanages/:id" component={Orphanage} />
+          <GlobalStyle />
         </ThemeProvider>
       </Switch>
     </BrowserRouter>

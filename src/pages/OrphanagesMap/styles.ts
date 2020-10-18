@@ -14,13 +14,13 @@ export const Container = styled.div`
   }
 
   .map-popup .leaflet-popup-content-wrapper {
-    background: rgba(255, 255, 255, 0.8);
+    background: ${({ theme }) => theme.colors.popupBackground};
     border-radius: 20px;
     box-shadow: none;
   }
 
   .map-popup .leaflet-popup-content {
-    color: #0089a5;
+    color: ${({ theme }) => theme.colors.popupText};
     font-size: 20px;
     font-weight: bold;
     margin: 8px 12px;
@@ -33,12 +33,16 @@ export const Container = styled.div`
   .map-popup .leaflet-popup-content a {
     width: 40px;
     height: 40px;
-    background: #15c3d6;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 12px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      background: ${({ theme }) => lighten(0.09, theme.colors.primary)};
+    }
   }
 
   .map-popup .leaflet-popup-tip-container {
@@ -50,8 +54,8 @@ export const Aside = styled.aside`
   width: 440px;
   background: linear-gradient(
     329.54deg,
-    ${props => props.theme.colors.primary} 0%,
-    ${props => props.theme.colors.grandientEffect} 100%
+    ${props => props.theme.colors.grandientEffect} 0%,
+    ${props => props.theme.colors.primary} 100%
   );
   padding: 80px;
 

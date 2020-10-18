@@ -12,7 +12,9 @@ export default createGlobalStyle`
 
   body {
     color: #fff;
-    background: #ebf2f5;
+    background: ${({ theme }) => theme.colors.backgroundGlobal};
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
   }
 
   body,
