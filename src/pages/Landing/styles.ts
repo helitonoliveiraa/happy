@@ -16,12 +16,6 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const SwitchButton = styled.div`
-  position: absolute;
-  right: 0;
-  top: 80px;
-`;
-
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;

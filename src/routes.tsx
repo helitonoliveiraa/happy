@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import usePersistedState from './utils/usePersistedState';
 
@@ -35,6 +36,7 @@ const Routes: React.FC = () => {
           <Route path="/orphanages/create" component={CreateOrphanage} />
           <Route path="/orphanages/:id" component={Orphanage} />
           <GlobalStyle />
+          <ToastContainer autoClose={3000} />
         </ThemeProvider>
       </Switch>
     </BrowserRouter>

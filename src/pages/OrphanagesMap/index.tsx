@@ -5,6 +5,7 @@ import { FiPlus, FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import api from '../../services/api';
+
 import happyMapIcon from '../../utils/happyMapIcon';
 import mapMarkerImg from '../../assets/map-marker.svg';
 
