@@ -39,6 +39,10 @@
 
 <br /><br />
 
+Acesse o Repositório da versão mobile do projeto: [Clique em mim](https://github.com/heliton1988/happy-mobile)
+
+<br />
+
 ## :memo: Sobre
 
 Happy é uma aplicação que estou desenvolvendo no evento `NLW(Next Level week)` oferecido pela [Rocketseat](https://rocketseat.com.br/). Ao final do treinamente terei desenvolvido uma aplicação completa que envolve front-end web, mobile & back-end.<br />
