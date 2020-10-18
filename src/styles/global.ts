@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 // import 'leaflet/dist/leaflet-src';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
 

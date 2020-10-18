@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 import { FiPlus } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 import Sidebar from '../../components/Sidebar';
 import happyMapIcon from '../../utils/happyMapIcon';
@@ -50,7 +51,7 @@ const CreateOrphanage: React.FC = () => {
     setImages(selectedImage);
 
     const selectedImagePreview = selectedImage.map(image =>
-      URL.createObjectURL(image),);
+      URL.createObjectURL(image));
 
     setPrevewImages(selectedImagePreview);
   }
@@ -76,9 +77,11 @@ const CreateOrphanage: React.FC = () => {
 
     await api.post('orphanages', data);
 
-    alert('Cadastro realizado com sucesso!');
+    toast.success('Cadastro realizado com sucesso!');
 
-    history.push('/app');
+    setTimeout(() => {
+      history.push('/app');
+    }, 3000);
   }
 
   return (
