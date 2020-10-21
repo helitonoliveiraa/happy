@@ -3,14 +3,17 @@ import { ThemeContext } from 'styled-components';
 import Switch from 'react-switch';
 import { shade } from 'polished';
 
+import { useTheme } from '../../Contexts/theme';
+
 import { Wrapper } from './styles';
 
 interface Toggle {
   toggleTheme: () => void;
 }
 
-const SwitchButton: React.FC<Toggle> = ({ toggleTheme }) => {
+const SwitchButton: React.FC<Toggle> = () => {
   const { colors, title } = useContext(ThemeContext);
+  const { toggleTheme } = useTheme();
 
   return (
     <Wrapper>
