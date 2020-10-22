@@ -26,7 +26,7 @@ export const AppThemeProvider: React.FC = ({ children }) => {
   );
 };
 
-export function useTheme() {
+export function useTheme(): Theme {
   const context = useContext(ThemeContext);
 
   return context;
