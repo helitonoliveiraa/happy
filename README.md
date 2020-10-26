@@ -43,7 +43,9 @@
 
 <br /><br />
 
-# Para manter uma maior organização do projeto, fiz algumas mudanças e movi as aplicações (web, mobile & back-end) para repositórios separados!
+# 💄 Fiz algumas mudanças
+
+Para manter uma maior organização do projeto movi as aplicações (web, mobile & back-end) para repositórios separados!
 
 Seque abaixo os links dos repositórios: 
 
