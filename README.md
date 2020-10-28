@@ -35,14 +35,6 @@
 
 <br /><br />
 
-<p  align="center">
-  <a href="https://happy-orphanage-nlw.netlify.app/">
-    <img src="./.github/button.png" atl="Happy-netlify">
-  </a>
-</p>
-
-<br /><br />
-
 # 💄 Fiz algumas mudanças
 
 Para manter uma maior organização do projeto movi as aplicações (web, mobile & back-end) para repositórios separados!
